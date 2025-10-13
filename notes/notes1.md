@@ -68,6 +68,12 @@ on what the company usually does.
 
 Finally the rest is standard procedure when the changes are deployed e.g. monitoring and making sure everything is sound
 
-Use cases for Github actions:
+**Use cases for Github actions:**
+
+It buils and tests your code every time you push changes to the repo - you have code running unit tests on every pull request and this ensure that any new code doesn't break existing functionality and maintains the quality of your code base
+
+After code passes all tests, github actions can automatically deploy to production or any environment - this speeds up release process and reduces manual intervention. Example would be deploying a web app to a cloud service like AWS. This can be set to happen automatically after all tests are passed
+
+Lastly, automation can handle repetitve tasks in your workflow - An example would be managing project board automation meaning moving cards or tasks between columns on a github project board based on issues or pull requests which keeps the project board up to date without manual effort
 
 
