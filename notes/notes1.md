@@ -77,3 +77,65 @@ After code passes all tests, github actions can automatically deploy to producti
 Lastly, automation can handle repetitve tasks in your workflow - An example would be managing project board automation meaning moving cards or tasks between columns on a github project board based on issues or pull requests which keeps the project board up to date without manual effort
 
 
+YAML
+---
+
+YAML Ain't Markup Language is the language of devops and is a human readable data serialisation standard that is often used for configuration files.
+
+Key value pairs in yaml is straight forward. The format works as this, the key which is the variable and the value which will be the value of the variable.
+
+```
+key: value
+age: 30
+```
+
+Lists in yaml work as arrays in our programming languages e.g. a fruits list will contain fruits within it by using a semi colon followed by a space to define it
+
+```
+Fruits:
+- apple
+- banana
+- orange
+```
+
+Finally a nested element which is applied by using indententation. 
+
+```
+server:
+  name: prod-server
+  ip: 192.168.1.1
+  credentials:
+    username: admin
+    password: secret
+```
+<img width="617" height="532" alt="image" src="https://github.com/user-attachments/assets/3d38f1d0-8eea-4436-a4e2-acfaf7c5fb06" />
+
+
+Pipelines
+---
+
+The workflow structure file is broken into parts
+
+First we have the name which is the just the name field of the file. This could be used to simple name what this file would do.
+
+Next we have the trigger however in this case we have "on". We have a push set to it meaning any time a pull request is created then merged, it will trigger the job or a shedule. 
+
+Next is the job that will be run and these jobs are series of tasks that run as part of the workflow. In this scenario we have a job named build and then after that we have the steps that will be executed. 
+
+First in this section we define which environment it runs. We also have a pipeline to run in a container if need be however by default github actions uses commonly use OSs like Ubuntu.
+
+Each step in the job are individual tasks that run in a sequence. Each step is either a command that is run or a action. Actions are reusable pieces of code that can perform a variety of tasks. 
+
+In the first step we have a checkout code which uses a action to checkout the code from the repository. This action pulls the latest code from the repo so the subsequent steps can work with it. 
+
+Also, the steps can be run sequentially within a job and independent tasks run in parallel or sequential too.
+
+There is also a marketplace for github workflows that has community created actions. Some are created by github themselves and some are other orgs like AWS etc. 
+
+<img width="901" height="436" alt="image" src="https://github.com/user-attachments/assets/48d0052c-f144-45ef-8571-82d57f061239" />
+
+Below is another example of a workflow file
+
+<img width="1779" height="672" alt="image" src="https://github.com/user-attachments/assets/e7ff9b1c-7320-4105-85b8-f1cbb16ecf08" />
+
+
