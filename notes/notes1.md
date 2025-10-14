@@ -138,4 +138,18 @@ Below is another example of a workflow file
 
 <img width="1779" height="672" alt="image" src="https://github.com/user-attachments/assets/e7ff9b1c-7320-4105-85b8-f1cbb16ecf08" />
 
+My first pipleline push is below 
 
+<img width="527" height="344" alt="image" src="https://github.com/user-attachments/assets/fa604a6e-083d-4a94-ad8d-f9e05f3ed61c" />
+
+First we have the trigger which is set push - so when code is pushed to the repo, it triggers the job
+
+Next is the job and what job it is. In this case the job is build and it will run on ubuntu.
+
+Lastly are the two steps that will be executed within the ubuntu envrionment. First is the checkout code action which is a git actions pipeline command. Essentially it checks everything in the repo for following commands to follow.
+
+<img width="966" height="275" alt="image" src="https://github.com/user-attachments/assets/2be6c4da-a474-4aad-b25c-8f9f777ded55" />
+
+The next step we have is a simple echo command to be run once checkout has been done - this will basically tell us that it ran since it echo's out the final command in the pipeline.
+
+<img width="987" height="459" alt="image" src="https://github.com/user-attachments/assets/00d9f7da-0333-4a8a-a335-bd1321bcdfe6" />
