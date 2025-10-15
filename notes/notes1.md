@@ -153,3 +153,38 @@ Lastly are the two steps that will be executed within the ubuntu envrionment. Fi
 The next step we have is a simple echo command to be run once checkout has been done - this will basically tell us that it ran since it echo's out the final command in the pipeline.
 
 <img width="987" height="459" alt="image" src="https://github.com/user-attachments/assets/00d9f7da-0333-4a8a-a335-bd1321bcdfe6" />
+
+
+Condtions and Expressions 
+---
+
+Conditions in github actions work when a condition is met. Meaning if the condition from a previous step is met then the following can be run etc. 
+
+<img width="1149" height="285" alt="image" src="https://github.com/user-attachments/assets/2eba1b0a-de1f-45da-9834-e07674bff59f" />
+
+Expressions provide a way to perform calculations, manipulate string and more within the workflow file. A expression can be used like this
+
+```
+run: echo "Branch is ${{ github.ref }}"
+```
+
+In simple terms, expressions can access already defined variables (contexts) in github action and with those they can parse those variables to print something. They can also perform logic with if, ==, !=, contains and compute or format values. 
+
+```
+run: echo "Total value: ${{ 10 + 5 }}"
+```
+***echos the sum of what's in the brackets***
+
+```
+env:
+  DEPLOY_ENV: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
+```
+***here expression is used to specify the deployment environment - if on main branch > deploy_env = production otherwise staging***
+
+```
+run: echo "Build started by ${{ github.actor }} on branch ${{ github.ref_name }}"
+```
+***here we combine strings and variables - so in this case we echo who the build is started by and put it into an expressions***
+
+Expressions work like a mini script that evaluates or manipulates set variables
+
