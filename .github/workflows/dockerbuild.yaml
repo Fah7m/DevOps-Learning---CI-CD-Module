@@ -12,10 +12,10 @@ jobs:
 
       - name: Build Docker image
         run: |
-          cd ~/docker/challenge
+          cd challenge
           docker build . -t f1him/count-app:v4
 
       - name: push image to Docker Hub
         run: |
           docker login -u f1him -p ${{ secrets.DOCKER_TOKEN }}
-          docker push f1him/count-app:latest
+          docker push f1him/count-app:v4
