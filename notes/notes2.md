@@ -83,6 +83,14 @@ Tools for this for Junit for Java and unittest as we used previously for python.
 
 Security CI/CD
 ---
+Firstly make sure your secrets are secure as they include sensitive information such as API keys, tokens, passwords etc. Always try to variablise sensitive data in your pipeline with the git secrets. 
+
+Control access is also important. Making sure that least privilege is implemented reduces the risk of unauthorized access or accidental changes which can compromise security.
+
+Scanning your code and dependices for any vulnerabilities with tools like Dependabot, Synk or any other scanners which integrate within the CICD pipeline. This helps identify risk to security early and address it.
+
+And last but not least, audit and monitor. Make sure to audit and monitor your CICD pipelines. Keep track of who did what and when by enabling logging and auditing features. Monitor your pipelines, yes, for any unusual or suspicious activity. Set up alerts to notify you of any potential security incidents. Regular audits help you detect and respond to security issues promptly, ensuring that your workflows remain secure over time.
+
 
 
 Debugging pipelines
