@@ -66,3 +66,17 @@ To use a secret in your workflow file you first need to
 
 
 
+Automated Testing and Linting 
+---
+Linting is the process of analysing code for potential errors and enforcing coding standards - basically like having a spell checker for your code making sure there are no syntax errors etc.
+
+Benefits of this would be catching syntax errors and maintain code quality 
+
+Tools for this would be ESLint for Java and PyLint for python.
+
+Automated testing is running tests automatically on your codebase to ensure it works as expected 
+
+Benefits of this would be you can catch issues early and ensure the code quality. By consistantly running tests, you can ensure the code is up to standard. 
+
+Tools for this for Junit for Java and unittest as we used previously for python.
+
