@@ -12,7 +12,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ~/docker/challenge -t f1him/count-app:v4
+          docker build -t ~/docker/challenge -t f1him/count-app:v4 .
       
       - name: push image to Docker Hub
         run: |
