@@ -11,8 +11,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: docker build ./docker/challenge -t f1him/count-app:v4
-      
+        run: |
+          cd ~/docker/challenge
+          docker build . -t f1him/count-app:v4
+
       - name: push image to Docker Hub
         run: |
           docker login -u f1him -p ${{ secrets.DOCKER_TOKEN }}
