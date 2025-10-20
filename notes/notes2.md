@@ -80,3 +80,30 @@ Benefits of this would be you can catch issues early and ensure the code quality
 
 Tools for this for Junit for Java and unittest as we used previously for python.
 
+
+Security CI/CD
+---
+
+
+Debugging pipelines
+---
+
+Pipeines can fail and debugging the CI/CD pipeline can take long so here are things to look out for:
+
+**Common Issues:**
+
+Failed tests - 
+
+Dependency errors - These occur when your project relies on external libaries or packages that have conflicts, or have not installed correctly.
+
+Config errors - Config errors can occur when there are issues in your syntax like in the pipeline YAML file. This can be caused by missing spaces, indentation, a line or a simple spelling error. 
+
+Perm issues - These can happen when you don't have the correct permission in a repo to perform certain actions like accessing secrets or writing to certain directories.
+
+**Common Solutions:**
+
+Review logs - this should always be the first thing to look at as it gives you more detailed information about where it went wrong. 
+
+Rerun jobs - Sometimes the issue might be a transient one, meaning rerunning the job can help determine if the failure was a fluke or a consistent problem. 
+
+Update dependencies - Ensure all dependencies are up to data and this can solve conflicts and compatibility issues. Always deouble check the config files for any syntax errors or incorrect settings and make sure all environment variables and secrets are also correctly set.
