@@ -9,7 +9,6 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
-              name: setup tflint
               with:
                   tflint_version: v0.52.0
                   cache: true
