@@ -1,0 +1,40 @@
+name: Terraform Deploy
+
+on: [workflow_dispatch]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: go to terraform folder
+      run: cd tfcode  
+      working-directory: ./tfcode  
+        
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+          terraform_version: 1.13.3
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: install tflint
+      run: |
+          curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+      
+    - name: Terraform fmt
+      run: terraform fmt -check
+
+    - name: Terraform Validate
+      run: terraform validate
+
+    - name: run tflint
+      run: tflint
+        
+    - name: notify deployment success
+      run: echo "Terraform linting completed successfully."
+      if: success() 

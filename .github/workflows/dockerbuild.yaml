@@ -19,3 +19,5 @@ jobs:
         run: |
           docker login -u f1him -p ${{ secrets.DOCKER_TOKEN }}
           docker push f1him/count-app:v4
+
+          
